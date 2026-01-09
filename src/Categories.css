@@ -1,0 +1,15 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* keeps everything neat */
+  height: 100%; /* ensures all cards same height */
+  text-align: center;
+}
+
+.category-img {
+  width: 100%;
+  height: 250px; /* same height for all */
+  object-fit: cover; /* crop center if needed */
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,22 @@
+.cart-header, .cart-row {
+  font-size: 0.9rem;
+}
+
+.cart-row button {
+  min-width: 30px;
+  padding: 0 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cart-row {
+    flex-wrap: wrap;
+  }
+  .cart-row > div {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .cart-header > div {
+    display: none; /* optional: hide header on small screens */
+  }
+}

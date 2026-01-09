@@ -1,0 +1,68 @@
+.top-bar {
+  background-color:darkred;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  color: #b40000 !important;
+}
+/* Mega Menu Styling */
+.mega-dropdown {
+  position: relative;
+}
+
+.mega-menu {
+  width: 700px; /* adjust as needed */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.mega-dropdown:hover .mega-menu {
+  display: flex;
+}
+
+.mega-menu img {
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.mega-menu ul li {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.mega-menu ul li:hover {
+  color: #d61c1c; /* optional hover color */
+}
+.mega-dropdown {
+  position: static;
+}
+
+.mega-menu {
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+.icon-link{
+text-decoration  : none;
+}
+.custom-btn {
+  background-color: #ccc;
+  border-color: #ccc;
+  color: black; 
+  transition: all 0.3s ease; 
+}
+
+.custom-btn:hover {
+  background-color: #333; 
+  color: #fff;           
+  border-color: #333;   
+}

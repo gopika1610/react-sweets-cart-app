@@ -1,0 +1,20 @@
+.heritage-section {
+  background-color:darkred;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.heritage-section h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.heritage-section h4 {
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.heritage-section p {
+  font-size: 18px;
+  line-height: 1.8;
+}
