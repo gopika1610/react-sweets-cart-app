@@ -1,9 +1,5 @@
-
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "/Hero.css";
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; 
-
+import "./Hero.css";
 
 function Hero() {
   return (
@@ -11,8 +7,8 @@ function Hero() {
       
     
       <div className="carousel-indicators">
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" className="active" ></button>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+        <button data-bs-target="#heroCarousel" data-bs-slide-to="0" className="active" ></button>
+        <button  data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
         
       </div>
 

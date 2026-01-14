@@ -13,7 +13,7 @@ import Register from "./Register";
 import Viewall from "./Viewall";
 import Footer from "./Footer";
 import ScrollToTop from "./ScrollToTop";
-import ProductList from "./data/ProductList";
+
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -38,7 +38,7 @@ function App() {
         <Route path="/cart"  element={<Cart/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/viewall" element={<Viewall/>}/>
-        <Route path="/productlist" element={<ProductList/>}/>
+      
       
         
      

@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import "./Products.css";
 
+
 const products = [
   {
     name: "Kaju Katli",
