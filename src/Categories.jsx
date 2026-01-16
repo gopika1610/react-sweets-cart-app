@@ -5,7 +5,7 @@ import "./Categories.css"
 function Categories() {
   return (
     <Container className="my-5">
-      <h2 className="text-center fw-bold mb-4">Sweets,treats and eat for every craving!</h2>
+      <h2 className="text-center fw-bold mb-4 heading">Sweets,treats and eat for every craving!</h2>
       <Row className="g-4">
         
        

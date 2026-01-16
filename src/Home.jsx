@@ -6,11 +6,11 @@ import Infosection from "./Infosection";
 import Festivebakes from "./Festivebakes";
 import Testimonials from "./Testimonials";
 
-function Home() {
+function Home({ handleAddToCart }) {
   return (
     <>
       <Hero />
-      <Products />
+      <Products handleAddToCart={handleAddToCart} />
       <Journey />
       <Categories />
       <Infosection />

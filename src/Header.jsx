@@ -1,8 +1,8 @@
-import React from "react";
+
 import "./Header.css";
 import { Link } from "react-router-dom";
 
-function Header() {
+function Header({cartCount}) {
   return (
     <>
   
@@ -14,10 +14,10 @@ function Header() {
       <nav className="navbar navbar-expand-lg bg-white border-bottom px-4 position-relative">
          
         <Link to="/" className="navbar-brand" href="#">
-          <img src="/logo.webp" alt="Shree Mithai" height="60" />
+          <img src="/logo.webp" alt="Shree Mithai"/>
         </Link>
 
-        <button
+        <button 
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -233,7 +233,7 @@ function Header() {
           <span role="button">👤</span>
           </Link>
           <Link to="/cart" className="icon-link">
-          <span role="button">🛒 0</span>
+          <span role="button">🛒  {cartCount}</span>
          </Link>
         </div>
       </nav>

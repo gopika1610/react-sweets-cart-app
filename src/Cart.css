@@ -1,3 +1,17 @@
+
+img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;   
+  border-radius: 6px;
+  margin-left: 20px;
+}
+img {
+  transition: transform 0.3s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
 .cart-header, .cart-row {
   font-size: 0.9rem;
 }
@@ -5,6 +19,10 @@
 .cart-row button {
   min-width: 30px;
   padding: 0 6px;
+}
+.cart-item {
+  width: 300px;   
+  margin: 10px 0;   
 }
 
 /* Responsive */
@@ -17,6 +35,7 @@
     margin-bottom: 10px;
   }
   .cart-header > div {
-    display: none; /* optional: hide header on small screens */
+    display: none; 
   }
 }
+

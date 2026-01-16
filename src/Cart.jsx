@@ -2,53 +2,53 @@ import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import "./Cart.css";
 
-
 const formatPrice = (num) => num.toLocaleString("en-IN");
 
-function Cart() {
-
-  const [cart, setCart] = useState([]);
-
+function Cart({ cart, setCart }) {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
   const [error, setError] = useState("");
 
- 
+  
   const increaseQty = (id) => {
     setCart(
-      cart.map(item =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item
-      )
-    );
-  };
-
-  const decreaseQty = (id) => {
-    setCart(
-      cart.map(item =>
-        item.id === id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
+      cart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
   };
 
-  const removeItem = (id) => {
-    setCart(cart.filter(item => item.id !== id));
+ 
+  const decreaseQty = (id) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
 
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+ 
   const subtotal = cart.reduce(
-    (total, item) => total + item.price * item.qty,
+    (total, item) => total + item.price * item.quantity,
     0
   );
 
   const deliveryFee = subtotal > 500 || cart.length === 0 ? 0 : 50;
 
   const applyCoupon = () => {
-    if (coupon === "SAVE10") {
+    if (coupon === "PONGAL") {
       setDiscount(subtotal * 0.1);
       setError("");
-    } else if (coupon === "FLAT50") {
+    } else if (coupon === "DIWALI") {
       setDiscount(50);
       setError("");
     } else {
@@ -63,9 +63,8 @@ function Cart() {
     <div className="container my-5">
       <h2 className="fw-bold mb-4">Your Cart</h2>
 
-     
       <Table bordered responsive className="align-middle">
-        <thead>
+        <thead className="text-center">
           <tr>
             <th>Item</th>
             <th>Price</th>
@@ -75,7 +74,7 @@ function Cart() {
           </tr>
         </thead>
 
-        <tbody>
+        <tbody className="text-center">
           {cart.length === 0 ? (
             <tr>
               <td colSpan="5" className="text-center py-4 text-muted">
@@ -83,14 +82,14 @@ function Cart() {
               </td>
             </tr>
           ) : (
-            cart.map(item => (
+            cart.map((item) => (
               <tr key={item.id}>
                 <td>
                   <div className="d-flex align-items-center">
                     <img
                       src={item.img}
                       alt={item.name}
-                      width="60"
+                   
                       className="me-3"
                     />
                     {item.name}
@@ -102,18 +101,22 @@ function Cart() {
                 <td>
                   <Button
                     size="sm"
-                    disabled={item.qty === 1}
+                    disabled={item.quantity === 1}
                     onClick={() => decreaseQty(item.id)}
                   >
-                    -
+                    −
                   </Button>
-                  <span className="mx-2">{item.qty}</span>
+
+                  <span className="mx-2">{item.quantity}</span>
+
                   <Button size="sm" onClick={() => increaseQty(item.id)}>
                     +
                   </Button>
                 </td>
 
-                <td>₹ {formatPrice(item.price * item.qty)}</td>
+                <td>
+                  ₹ {formatPrice(item.price * item.quantity)}
+                </td>
 
                 <td>
                   <Button
@@ -130,47 +133,46 @@ function Cart() {
         </tbody>
       </Table>
 
-     
+      {/* CART TOTAL */}
       <div className="mt-4" style={{ maxWidth: "360px" }}>
         <div className="border p-3 rounded">
           <h5 className="fw-bold mb-3">Cart Total</h5>
 
-      
-          <div className="mb-3">
-            <input
-              type="text"
-              className="form-control mb-2"
-              placeholder="Enter coupon code"
-              value={coupon}
-              onChange={(e) => setCoupon(e.target.value.toUpperCase())}
-              disabled={cart.length === 0}
-            />
+          <input
+            type="text"
+            className="form-control mb-2"
+            placeholder="Enter coupon code"
+            value={coupon}
+            onChange={(e) => setCoupon(e.target.value.toUpperCase())}
+            disabled={cart.length === 0}
+          />
 
-            <Button
-              variant="secondary"
-              size="sm"
-              className="w-100"
-              onClick={applyCoupon}
-              disabled={cart.length === 0}
-            >
-              Apply Coupon
-            </Button>
+          <Button
+            variant="secondary"
+            size="sm"
+            className="w-100 mb-2"
+            onClick={applyCoupon}
+            disabled={cart.length === 0}
+          >
+            Apply Coupon
+          </Button>
 
-            {error && <small className="text-danger">{error}</small>}
-          </div>
+          {error && <small className="text-danger">{error}</small>}
 
-          <div className="d-flex justify-content-between mb-2">
+          <div className="d-flex justify-content-between mt-3">
             <span>Subtotal</span>
             <span>₹ {formatPrice(subtotal)}</span>
           </div>
 
-          <div className="d-flex justify-content-between mb-2">
+          <div className="d-flex justify-content-between">
             <span>Delivery Fee</span>
-            <span>{deliveryFee === 0 ? "Free" : `₹ ${formatPrice(deliveryFee)}`}</span>
+            <span>
+              {deliveryFee === 0 ? "Free" : `₹ ${formatPrice(deliveryFee)}`}
+            </span>
           </div>
 
           {discount > 0 && (
-            <div className="d-flex justify-content-between mb-2 text-success">
+            <div className="d-flex justify-content-between text-success">
               <span>Discount</span>
               <span>- ₹ {formatPrice(discount)}</span>
             </div>
@@ -178,12 +180,12 @@ function Cart() {
 
           <hr />
 
-          <div className="d-flex justify-content-between fw-bold mb-3">
+          <div className="d-flex justify-content-between fw-bold">
             <span>Total</span>
             <span>₹ {formatPrice(finalTotal)}</span>
           </div>
 
-          <Button className="w-100" disabled={cart.length === 0}>
+          <Button className="w-100 mt-3" disabled={cart.length === 0}>
             Proceed to Checkout
           </Button>
         </div>

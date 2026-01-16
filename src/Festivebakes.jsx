@@ -14,6 +14,7 @@ function Festivebakes() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Link to="/Explore" className="Explore">
     
       <Button
         variant="light"
@@ -22,6 +23,7 @@ function Festivebakes() {
       >
         Explore and Order Away
       </Button>
+      </Link>
    
     </div>
   );

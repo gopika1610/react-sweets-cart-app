@@ -8,7 +8,7 @@ function Testimonials() {
 
   return (
     <Container className="py-5 text-center">
-      <h2 className="fw-bold mb-5">
+      <h2 className="fw-bold mb-5 ">
         Scrumptious Experiences, Happy Voices!
       </h2>
 
