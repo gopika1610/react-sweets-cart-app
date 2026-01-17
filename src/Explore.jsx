@@ -22,7 +22,7 @@ function Explore({ handleAddToCart }) {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center fw-bold mb-4 text-danger" >
+      <h2 className="text-center fw-bold mb-4" >
         Explore Festive Bakes 🎉
       </h2>
 
@@ -43,7 +43,7 @@ function Explore({ handleAddToCart }) {
               </div>
   </div>
               <button
-                className="add-cart-btn mt-3  "
+                className="add-cart-btn mt-4 "
                 onClick={() =>
                   handleAddToCart(item, qty[item.id] || 1)
                 }

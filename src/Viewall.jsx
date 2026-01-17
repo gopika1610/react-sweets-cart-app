@@ -46,7 +46,7 @@ function Viewall({ handleAddToCart }) {
 
             <div className="text-center mt-2">
               <button
-                className="btn add-cart-btn mt-2"
+                className="btn add-cart-btn mt-4"
                 onClick={() => handleAddToCart(item, quantity[item.id] || 1)}
               >
                 Add to Cart

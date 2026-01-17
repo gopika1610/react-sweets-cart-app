@@ -31,7 +31,8 @@ function App() {
       if (exists) {
         return prev.map((p )=>
           p.id === item.id
-            ? { ...p, quantity: p.quantity ||1 + qty }
+          ? { ...p, quantity: (p.quantity || 0) + qty }
+
             : p
         );
       }
@@ -40,7 +41,7 @@ function App() {
     });
   };
 
-  const cartCount = cart.reduce(
+  const cartCount =cart.reduce(
     (sum, item) => sum + item.quantity,
     0
   );
@@ -55,7 +56,7 @@ function App() {
         <Route path="/products" element={<Products handleAddToCart={handleAddToCart} />}/>
         <Route path="/viewall" element={<Viewall handleAddToCart={handleAddToCart} />}/>
         <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path="hero" element={<Hero/>}/>
+        <Route path="/hero" element={<Hero/>}/>
         <Route path="/journey" element={<Journey />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/infosection" element={<Infosection />} />
