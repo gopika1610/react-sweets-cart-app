@@ -1,6 +1,6 @@
 .heritage-section {
   background-color:darkred;
-  color: #fff;
+  color: #fff !important;
   padding: 80px 20px;
 }
 

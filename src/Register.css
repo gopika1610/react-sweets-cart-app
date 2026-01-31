@@ -1,3 +1,75 @@
 .account{
     text-decoration: none;
 }
+/* Page center */
+.register-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f6f6f6;
+}
+
+/* Card */
+.register-card {
+  width: 380px;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs */
+.form-control {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+/* OR divider */
+.or-divider {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.or-divider span {
+  padding: 0 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #777;
+}
+
+/* Login link */
+.login-link {
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* Social buttons */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-btn img {
+  width: 20px;
+  height: 20px;
+}

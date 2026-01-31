@@ -1,4 +1,3 @@
-
 import "./Header.css";
 import { Link } from "react-router-dom";
 
@@ -171,7 +170,6 @@ function Header({cartCount}) {
                       <li>Banana Chips</li>
                       <li>Almond cookies</li>
                       <li>Achari Lvash</li>
-                      
                       <li>Baked Cheesecake</li>
                       
                     </ul>

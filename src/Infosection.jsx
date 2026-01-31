@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaTruck, FaShoppingCart, FaSeedling } from "react-icons/fa"; // icons
 

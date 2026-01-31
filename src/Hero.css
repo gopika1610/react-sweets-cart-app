@@ -2,6 +2,8 @@
 .hero-img {
   height: 550px;
   object-fit: fill;
+  margin-left: 0px;
+
 }
 
 

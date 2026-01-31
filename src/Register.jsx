@@ -1,83 +1,112 @@
-import "./Register.css"
-import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Form, Row, Col } from 'react-bootstrap';
+import "./Register.css";
+import { Link, useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form } from "react-bootstrap";
+import { useState } from "react";
 
-function Register(){
-  
-       return (
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
-      <div className="p-4 bg-white shadow rounded" style={{ width: '400px' }}>
-        <h3 className="mb-4 text-center fw-bold">Register</h3>
+function Register() {
+  const navigate = useNavigate();
 
-        <Form>
-         
-          <Form.Group className="mb-3" controlId="formEmail">
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleCreateAccount = (e) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, password } = formData;
+
+    if (!firstName || !lastName || !email || !password) {
+      alert("All fields are required ❌");
+      return;
+    }
+
+    // Get existing users from localStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check if email already exists
+    const userExists = users.find((user) => user.email === email);
+    if (userExists) {
+      alert("Email already registered ❌");
+      return;
+    }
+
+    // Add new user
+    users.push(formData);
+    localStorage.setItem("users", JSON.stringify(users));
+
+    alert("Account created successfully ✅");
+    navigate("/login");
+  };
+
+  return (
+    <div className="register-wrapper">
+      <div className="register-card">
+        <h3 className="text-center fw-bold mb-3">Register</h3>
+
+        <Form onSubmit={handleCreateAccount}>
+          <Form.Group className="mb-2">
             <Form.Label className="fw-bold">First Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter First Name" />
+            <Form.Control
+              type="text"
+              name="firstName"
+              placeholder="Enter First Name"
+              value={formData.firstName}
+              onChange={handleChange}
+            />
           </Form.Group>
 
-           <Form.Group className="mb-3" controlId="formEmail">
+          <Form.Group className="mb-2">
             <Form.Label className="fw-bold">Last Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter Last Name" />
+            <Form.Control
+              type="text"
+              name="lastName"
+              placeholder="Enter Last Name"
+              value={formData.lastName}
+              onChange={handleChange}
+            />
           </Form.Group>
- 
-          <Form.Group className="mb-3" controlId="formEmail">
+
+          <Form.Group className="mb-2">
             <Form.Label className="fw-bold">Email</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </Form.Group>
 
-       
-          <Form.Group className="mb-3" controlId="formPassword">
-            <Row className="align-items-center">
-              <Col>
-                <Form.Label className="fw-bold">password</Form.Label>
-              </Col>
-             
-            </Row>
-            <Form.Control type="password" placeholder="Enter password" />
+          <Form.Group className="mb-3">
+            <Form.Label className="fw-bold">Password</Form.Label>
+            <Form.Control
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+            />
           </Form.Group>
 
-          <Link to="/" className="create" >
           <Button variant="dark" type="submit" className="w-100 mb-3 fw-bold">
             Create
           </Button>
-          </Link>
-        
-          <div className="d-flex align-items-center mb-3">
-            <hr className="flex-grow-1" />
-            <span className="px-2 text-muted fw-bold">OR</span>
-            <hr className="flex-grow-1" />
-          </div>
-          <Link to="/login" className="account">
 
-         <Col className="text-end">
-                <a href="#" style={{ fontSize: '0.9rem', textDecoration: 'none' }}>Already have an account? </a>
-              </Col>
-          
-          </Link>
-        
-          <div className="d-flex justify-content-center gap-2 mt-2">
-            <Button variant="light" className="shadow-sm p-2">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png" 
-                alt="Google" 
-                style={{ width: '20px', height: '20px' }} 
-              />
-            </Button>
-            <Button variant="light" className="shadow-sm p-2">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" 
-                alt="Facebook" 
-                style={{ width: '20px', height: '20px' }} 
-              />
-            </Button>
+          <div className="text-center">
+            <Link to="/login">Already have an account?</Link>
           </div>
         </Form>
       </div>
     </div>
   );
-    }
-
+}
 
 export default Register;
