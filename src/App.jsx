@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -21,30 +22,236 @@ import Testimonials from "./Testimonials";
 import ScrollToTop from "./ScrollToTop";
 import Checkout from "./Checkout";
 
-function App() {
-  // ✅ Initialize cart from localStorage
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || []
-  );
+function AppRoutes({ cart, setCart, handleAddToCart, cartCount }) {
+  const location = useLocation();
 
-  // ✅ Sync cart to localStorage whenever it changes
+  const pageVariants = {
+    initial: { opacity: 0, x: -50 },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: 50 },
+  };
+
+  const pageTransition = {
+    type: "tween",
+    ease: "easeInOut",
+    duration: 0.3,
+  };
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
+        {/* Public routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Layout routes */}
+        <Route element={<Layout cartCount={cartCount} />}>
+          <Route
+            path="/"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Home handleAddToCart={handleAddToCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/products"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Products handleAddToCart={handleAddToCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/viewall"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Viewall handleAddToCart={handleAddToCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Cart cart={cart} setCart={setCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/product/:productId"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <ProductDescriptionPage handleAddToCart={handleAddToCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/explore"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Explore handleAddToCart={handleAddToCart} />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/hero"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Hero />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/journey"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Journey />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/categories"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Categories />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/infosection"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Infosection />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/festivebakes"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Festivebakes />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/testimonials"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Testimonials />
+              </motion.div>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <motion.div
+                initial="initial"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}
+              >
+                <Checkout cart={cart} setCart={setCart} />
+              </motion.div>
+            }
+          />
+        </Route>
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // ✅ handleAddToCart: quantity override
   const handleAddToCart = (item, quantity = 1) => {
-    setCart(prev => {
-      const exists = prev.find(p => p.id === item.id);
-
+    setCart((prev) => {
+      const exists = prev.find((p) => p.id === item.id);
       if (exists) {
-        // Replace old quantity with new quantity
-        return prev.map(p =>
+        return prev.map((p) =>
           p.id === item.id ? { ...p, quantity: quantity } : p
         );
       }
-
-      // New item → add with selected quantity
       return [...prev, { ...item, quantity }];
     });
   };
@@ -56,33 +263,12 @@ function App() {
       <ToastContainer position="top-center" autoClose={2000} />
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          {/* Public routes */}
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-
-          {/* Main layout with Header + Footer */}
-          <Route element={<Layout cartCount={cartCount} />}>
-            <Route path="/" element={<Home handleAddToCart={handleAddToCart} />} />
-            <Route path="/products" element={<Products handleAddToCart={handleAddToCart} />} />
-            <Route path="/viewall" element={<Viewall handleAddToCart={handleAddToCart} />} />
-            <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-            <Route
-              path="/product/:productId"
-              element={<ProductDescriptionPage handleAddToCart={handleAddToCart} />}
-            />
-            <Route path="/explore" element={<Explore handleAddToCart={handleAddToCart} />} />
-            <Route path="/hero" element={<Hero />} />
-            <Route path="/journey" element={<Journey />} />
-            <Route path="/categories" element={<Categories />} />
-            <Route path="/infosection" element={<Infosection />} />
-            <Route path="/festivebakes" element={<Festivebakes />} />
-            <Route path="/testimonials" element={<Testimonials />} />
-
-            {/* 🔥 Checkout: pass cart + setCart */}
-            <Route path="/checkout" element={<Checkout cart={cart} setCart={setCart} />} />
-          </Route>
-        </Routes>
+        <AppRoutes
+          cart={cart}
+          setCart={setCart}
+          handleAddToCart={handleAddToCart}
+          cartCount={cartCount}
+        />
       </BrowserRouter>
     </>
   );

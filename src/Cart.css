@@ -1,8 +1,4 @@
-/* =========================
-   Professional Cart Styling
-   ========================= */
 
-/* Images */
 img {
   width: 70px;
   height: 70px;
@@ -17,7 +13,7 @@ img:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Cart Header and Rows */
+
 .cart-header, .cart-row {
   font-size: 0.95rem;
   color: #333;
@@ -50,7 +46,12 @@ img:hover {
   vertical-align: middle !important;
 }
 
-/* Cart Item */
+button {
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+
+
 .cart-item {
   width: 300px;
   margin: 10px 0;
@@ -59,7 +60,7 @@ img:hover {
   gap: 10px;
 }
 
-/* Quantity Buttons */
+
 .quantity-container {
   display: flex;
   align-items: center;
@@ -95,7 +96,6 @@ padding: 6px;
   margin: 0 6px;
 }
 
-/* Remove Button */
 .remove-button {
   background-color: #f8d7da; /* light red background */
   color: #b40000;
@@ -105,6 +105,7 @@ padding: 6px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+   transition: transform 0.2s, background-color 0.2s;
 }
 
 .remove-button:hover {
@@ -112,7 +113,43 @@ padding: 6px;
   color: #fff;
 }
 
-/* Cart Total / Coupon Box */
+/* Button hover effects */
+.quantity-button {
+  transition: transform 0.2s, background-color 0.2s;
+}
+.quantity-button:hover {
+  transform: scale(1.1);
+ 
+}
+
+.remove-button {
+  transition: transform 0.2s, background-color 0.2s;
+}
+.remove-button:hover {
+  transform: scale(1.1);
+  
+  color: #000;
+}
+
+/* Cart row fade animation */
+.fade-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 300ms;
+}
+
 .cart-summary {
   margin-top: 30px;
   padding: 20px;
@@ -123,7 +160,6 @@ padding: 6px;
   font-weight: 600;
 }
 
-/* Input Fields */
 .cart-summary input {
   width: 100%;
   padding: 10px;
@@ -133,7 +169,7 @@ padding: 6px;
   font-size: 0.95rem;
 }
 
-/* Buttons in Summary */
+
 .cart-summary button {
   width: 100%;
   padding: 10px;
@@ -150,7 +186,7 @@ padding: 6px;
   background-color: #b40000;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .cart-header {
     display: none;
@@ -165,3 +201,4 @@ padding: 6px;
     margin-bottom: 8px;
   }
 }
+

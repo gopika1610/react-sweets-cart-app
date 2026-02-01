@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Button, Table } from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import "./Cart.css";
 
 const formatPrice = (num) => num.toLocaleString("en-IN");
 
 function Cart({ cart, setCart }) {
+  const [updatedId, setUpdatedId] = useState(null);
   const navigate = useNavigate();
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
@@ -28,7 +30,6 @@ function Cart({ cart, setCart }) {
       )
     );
   };
-
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
@@ -77,53 +78,58 @@ function Cart({ cart, setCart }) {
               </td>
             </tr>
           ) : (
-            cart.map((item) => (
-              <tr key={item.id}>
-                <td>
-                  <div className="d-flex align-items-center">
-                    <img
-                      src={item.img || "/default-product.png"}
-                      alt={item.name}
-                      className="me-3"
-                      width="50"
-                      height="50"
-                    />
-                    {item.name}
-                  </div>
-                </td>
-                <td>₹ {formatPrice(item.price)}</td>
-                <td>
-                  <Button
-                    className="quantity-button"
-                    disabled={item.quantity === 1}
-                    onClick={() => decreaseQty(item.id)}
-                  >
-                    −
-                  </Button>
-                  <span className="mx-2 quantity-number">{item.quantity}</span>
-                  <Button
-                    className="quantity-button"
-                    onClick={() => increaseQty(item.id)}
-                  >
-                    +
-                  </Button>
-                </td>
-                <td>₹ {formatPrice(item.price * item.quantity)}</td>
-                <td>
-                  <Button
-                    className="remove-button"
-                    variant="danger"
-                    onClick={() => removeItem(item.id)}
-                  >
-                    ×
-                  </Button>
-                </td>
-              </tr>
-            ))
+            <TransitionGroup component={null}>
+              {cart.map((item) => (
+                <CSSTransition key={item.id} timeout={300} classNames="fade">
+                  <tr>
+                    <td>
+                      <div className="d-flex align-items-center">
+                        <img
+                          src={item.img || "/default-product.png"}
+                          alt={item.name}
+                          className="me-3"
+                          width="50"
+                          height="50"
+                        />
+                        {item.name}
+                      </div>
+                    </td>
+                    <td>₹ {formatPrice(item.price)}</td>
+                    <td>
+                      <Button
+                        className="quantity-button"
+                        disabled={item.quantity === 1}
+                        onClick={() => decreaseQty(item.id)}
+                      >
+                        −
+                      </Button>
+                      <span className="mx-2 quantity-number">{item.quantity}</span>
+                      <Button
+                        className="quantity-button"
+                        onClick={() => increaseQty(item.id)}
+                      >
+                        +
+                      </Button>
+                    </td>
+                    <td>₹ {formatPrice(item.price * item.quantity)}</td>
+                    <td>
+                      <Button
+                        className="remove-button"
+                        variant="danger"
+                        onClick={() => removeItem(item.id)}
+                      >
+                        ×
+                      </Button>
+                    </td>
+                  </tr>
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
           )}
         </tbody>
       </Table>
 
+      {/* Cart total + coupon part remains same */}
       <div className="mt-4" style={{ maxWidth: "360px" }}>
         <div className="border p-3 rounded">
           <h5 className="fw-bold mb-3">Cart Total</h5>

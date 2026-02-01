@@ -112,7 +112,7 @@ function Header({cartCount}) {
                       <li>Banana Chips</li>
                       <li>Pepper Thattai</li>
                       <li>Cheese Balls</li>
-                      <li>Masala Rings</li>
+                      
                     </ul>
                   </div>
 
