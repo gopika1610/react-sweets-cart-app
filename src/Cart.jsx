@@ -13,7 +13,7 @@ function Cart({ cart, setCart }) {
   const [discount, setDiscount] = useState(0);
   const [error, setError] = useState("");
 
-  // Quantity handlers
+
   const increaseQty = (id) => {
     setCart(
       cart.map((item) =>
@@ -34,7 +34,7 @@ function Cart({ cart, setCart }) {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  // Cart calculations
+
   const subtotal = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0

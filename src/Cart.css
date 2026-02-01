@@ -97,7 +97,7 @@ padding: 6px;
 }
 
 .remove-button {
-  background-color: #f8d7da; /* light red background */
+  background-color: #f8d7da; 
   color: #b40000;
   border: none;
   padding: 6px 6px;
@@ -131,7 +131,7 @@ padding: 6px;
   color: #000;
 }
 
-/* Cart row fade animation */
+
 .fade-enter {
   opacity: 0;
   transform: translateX(-20px);
