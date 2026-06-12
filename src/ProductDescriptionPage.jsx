@@ -52,10 +52,10 @@ const ProductDescriptionPage = ({ handleAddToCart }) => {
           </p>
 
           <div className="product-actions">
-            <button className="btn-add-cart ms-3" onClick={addToCart}>
+            <button className="btn-add-cart " onClick={addToCart}>
               Add to Cart
             </button>
-            <button className="btn-order-now ms-2" onClick={orderNow}>
+            <button className="btn-order-now " onClick={orderNow}>
               Order Now
             </button>
           </div>

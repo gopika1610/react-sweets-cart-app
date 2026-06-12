@@ -1,61 +1,148 @@
+/* Base Container Alignment */
 .checkout-container {
   max-width: 1100px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 .checkout-title {
-  margin-bottom: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #212529;
 }
 
+/* Master 2-Column Grid Layout */
 .checkout-main {
   display: flex;
   gap: 30px;
+  align-items: flex-start;  
 }
 
-.checkout-form,
-.checkout-summary {
-  flex: 1;
-  border: 1px solid #ddd;
-  padding: 20px;
+/* Individual Card Structural Panels */
+.checkout-form {
+  flex: 7; /* Gives the form slightly more breathing room */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
   border-radius: 8px;
 }
 
+.checkout-summary {
+  flex: 5; /* Snug structure for the right-side summary overview */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px; /* Keeps summary card fixed during vertical scrolling */
+}
+
+.checkout-form h4, 
+.checkout-summary h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+/* Input Fields Framework */
+.form-group-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+/* Persistent clean text labels sitting cleanly above fields */
+.input-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Individual Form Inputs Styling */
 .checkout-form input {
   width: 100%;
-  margin-bottom: 12px;
-  padding: 10px;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.place-order-btn {
-  width: 100%;
-  padding: 12px;
-  background: black;
-  color: white;
-  border: none;
-  cursor: pointer;
+.checkout-form input:focus {
+  border-color: #ff7f00; /* Subtle orange focus matching brand theme */
+  box-shadow: 0 0 0 2px rgba(255, 127, 0, 0.1);
 }
 
+/* Side-by-side flexbox wrapper row for geo fields */
+.inline-fields-row {
+  display: flex;
+  gap: 16px;
+}
+
+.flex-field {
+  flex: 1;
+}
+
+/* Order Summary Item Blocks */
 .summary-item,
 .summary-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #495057;
 }
 
 .summary-row.total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-top: 16px;
+}
+
+/* Brand Total Highlight */
+.orange-total {
+  color: #ff7f00;
+}
+
+.text-success {
+  color: #198754;
+}
+
+/* Production-style action commitment button on order summary box */
+.place-order-btn-final {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
   font-weight: bold;
-}
-.checkout-main {
-  align-items: flex-start;  
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
 }
 
-.checkout-form {
-  position: relative;        
-  z-index: 10;               
+.place-order-btn-final:hover {
+  background-color: #212529;
+  opacity: 0.95;
 }
 
-.place-order-btn {
-  position: relative;       
-  z-index: 20;         
+/* Clean fallback adjustments for smaller mobile layouts */
+@media (max-width: 768px) {
+  .checkout-main {
+    flex-direction: column;
+  }
+  
+  .inline-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
 }
