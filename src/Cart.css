@@ -7,12 +7,11 @@ img {
   margin-left: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-/* Base gray color for the trash icon */
+
 .btn-remove-icon {
   color: #888888;
 }
 
-/* Turns into a sleek red accent only when a user engages with it */
 .btn-remove-icon:hover {
   color: #dc3545;
   transform: scale(1.1);

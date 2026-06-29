@@ -1,90 +1,46 @@
+
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import "./Categories.css"
+import { Link } from "react-router-dom";
+import "./Categories.css";
 
 function Categories() {
+ 
+  const categories = [
+    { title: "Milk Sweets", img: "/milk-sweet.webp", path: "milk-sweets" },
+    { title: "Cashew Sweets", img: "/cashew-sweets.webp", path: "cashew-sweets" },
+    { title: "Ghee Sweets", img: "/ghee-sweets.webp", path: "ghee-sweets" },
+    { title: "Savouries", img: "/savouries.webp", path: "savouries" },
+    { title: "Assorted Sweets", img: "/assorted-sweets.webp", path: "assorted-sweets" },
+    { title: "Bakery Delights", img: "/checkerboard-cake.webp", path: "bakery-delights" },
+  ];
+
   return (
     <Container className="my-5">
-      <h2 className="text-center fw-bold mb-4 heading">Sweets,treats and eat for every craving!</h2>
+      <h2 className="text-center fw-bold mb-4 heading">
+        Sweets, treats and eat for every craving!
+      </h2>
       <Row className="g-4">
-        
-       
-        <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/milk-sweet.webp"
-              alt="Milk Sweets"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>Milk Sweets</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-         <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/cashew-sweets.webp"
-              alt="Cashew Sweets"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>Cashew Sweets</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/ghee-sweets.webp"
-              alt="Ghee Sweets"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>Ghee Sweets</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-        <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/savouries.webp"
-              alt="savouries"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>savouries</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/assorted-sweets.webp"
-              alt="Assorted Sweets"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>Assorted Sweets</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-       
-        <Col md={4}>
-          <Card className="category-card border-0 text-center">
-            <img
-              src="/checkerboard-cake.webp"
-              alt="Bakery Delights"
-              className="category-img rounded-4"
-            />
-            <Card.Body>
-              <Card.Title>Bakery Delights</Card.Title>
-            </Card.Body>
-          </Card>
-        </Col>
-         
+        {categories.map((cat, index) => (
+          <Col md={4} key={index}>
+            {/* Dynamic path: /collections/ + path-name */}
+            <Link 
+              to={`/collections/${cat.path}`} 
+              style={{ textDecoration: 'none', color: 'inherit' }}
+            >
+              <Card className="category-card border-0 text-center h-100 shadow-sm">
+                <img
+                  src={cat.img}
+                  alt={cat.title}
+                  className="category-img rounded-4"
+                />
+                <Card.Body>
+                  <Card.Title>{cat.title}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+        ))}
       </Row>
     </Container>
   );

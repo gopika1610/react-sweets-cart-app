@@ -1,14 +1,24 @@
+
+import React from "react";
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
-function Layout({cartCount}){
-    return(
-        <>
+
+
+function Layout({ cartCount, setCart, products }) {
+  return (
+    <>
      
-      <Header cartCount={cartCount} />
-        <Outlet/>
-        <Footer/>
-        </>
-    )
+      <Header cartCount={cartCount} products={products} />
+      
+      <main>
+
+        <Outlet context={{ products, setCart }} /> 
+      </main>
+      
+      <Footer />
+    </>
+  );
 }
+
 export default Layout;

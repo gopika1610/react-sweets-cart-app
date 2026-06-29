@@ -1,4 +1,4 @@
-/* Base Container Alignment */
+
 .checkout-container {
   max-width: 1100px;
   margin: 40px auto;
@@ -11,16 +11,16 @@
   color: #212529;
 }
 
-/* Master 2-Column Grid Layout */
+
 .checkout-main {
   display: flex;
   gap: 30px;
   align-items: flex-start;  
 }
 
-/* Individual Card Structural Panels */
+
 .checkout-form {
-  flex: 7; /* Gives the form slightly more breathing room */
+  flex: 7;
   background: #ffffff;
   border: 1px solid #e0e0e0;
   padding: 24px;
@@ -28,13 +28,13 @@
 }
 
 .checkout-summary {
-  flex: 5; /* Snug structure for the right-side summary overview */
+  flex: 5; 
   background: #ffffff;
   border: 1px solid #e0e0e0;
   padding: 24px;
   border-radius: 8px;
   position: sticky;
-  top: 20px; /* Keeps summary card fixed during vertical scrolling */
+  top: 20px;
 }
 
 .checkout-form h4, 
@@ -44,14 +44,13 @@
   color: #212529;
 }
 
-/* Input Fields Framework */
+
 .form-group-block {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
 }
 
-/* Persistent clean text labels sitting cleanly above fields */
 .input-label {
   font-size: 0.75rem;
   font-weight: 700;
@@ -61,7 +60,6 @@
   letter-spacing: 0.5px;
 }
 
-/* Individual Form Inputs Styling */
 .checkout-form input {
   width: 100%;
   padding: 10px 12px;
@@ -73,11 +71,11 @@
 }
 
 .checkout-form input:focus {
-  border-color: #ff7f00; /* Subtle orange focus matching brand theme */
+  border-color: #ff7f00; 
   box-shadow: 0 0 0 2px rgba(255, 127, 0, 0.1);
 }
 
-/* Side-by-side flexbox wrapper row for geo fields */
+
 .inline-fields-row {
   display: flex;
   gap: 16px;
@@ -87,7 +85,7 @@
   flex: 1;
 }
 
-/* Order Summary Item Blocks */
+
 .summary-item,
 .summary-row {
   display: flex;
