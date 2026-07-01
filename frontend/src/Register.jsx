@@ -33,7 +33,7 @@ function Register() {
 
     try {
       // 🌟 Direct dynamic target call to backend node server register api route
-      const response = await axios.post("http://localhost:5000/api/users/register", {
+      const response = await axios.post("https://sweet-cart-backend-app.onrender.com/api/users/register", {
         firstName,
         lastName,
         email,

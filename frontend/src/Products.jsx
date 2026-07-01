@@ -11,7 +11,7 @@ function Products() {
   useEffect(() => {
     const fetchHomeProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("https://sweet-cart-backend-app.onrender.com/api/products");
         if (response.data && Array.isArray(response.data)) {
      
           setProducts(response.data.slice(0, 8));

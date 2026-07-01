@@ -379,7 +379,7 @@ function Explore() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/api/cart/add", {
+      const response = await axios.post("https://sweet-cart-backend-app.onrender.com/api/cart/add", {
         userId: user._id,
         productId: item._id,
         name: item.name,

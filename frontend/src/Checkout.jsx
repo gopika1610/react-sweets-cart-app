@@ -60,7 +60,7 @@ function Checkout({ cart, setCart }) {
 
    
     try {
-      const response = await axios.post("http://localhost:5000/api/orders/place", orderData);
+      const response = await axios.post("https://sweet-cart-backend-app.onrender.com/api/orders/place", orderData);
 
       if (response.status === 201) {
         setCart([]); 

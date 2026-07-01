@@ -18,7 +18,7 @@ function Login() {
 
     try {
       // 🌟 Triggering Axios POST call straight to live backend user endpoint
-      const response = await axios.post("http://localhost:5000/api/users/login", {
+      const response = await axios.post("https://sweet-cart-backend-app.onrender.com/api/users/login", {
         email,
         password,
       });

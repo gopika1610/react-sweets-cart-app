@@ -26,7 +26,7 @@ function Cart({ cart, setCart }) {
       const userId = getUserId();
       if (!userId) return;
       try {
-        const response = await axios.get(`http://localhost:5000/api/cart?userId=${userId}`);
+        const response = await axios.get(`https://sweet-cart-backend-app.onrender.com/api/cart?userId=${userId}`);
         setCart(Array.isArray(response.data) ? response.data : []);
       } catch (err) { console.error("Error loading cart:", err); }
     };

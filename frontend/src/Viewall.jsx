@@ -19,7 +19,7 @@ function Viewall() {
     const fetchAllProducts = async () => {
       try {
      
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("https://sweet-cart-backend-app.onrender.com/api/products");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
