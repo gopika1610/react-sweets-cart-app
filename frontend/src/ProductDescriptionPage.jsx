@@ -17,7 +17,7 @@ const ProductDescriptionPage = ({ handleAddToCart }) => {
     const fetchAndFilterProduct = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("https://sweet-cart-backend-app.onrender.com/api/products");
         
         // 🔎 URL ஐடிக்கு மேட்ச் ஆகுற ப்ராடக்ட்டை மட்டும் ஃபிரண்ட்-எண்ட்ல பிரிக்கிறோம்!
         const matchingProduct = response.data.find(item => item._id === productId);
