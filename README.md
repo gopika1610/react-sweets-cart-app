@@ -28,5 +28,7 @@ React Sweets Cart App is a full-stack e-commerce web application for a sweet sho
 
 ### Backend Setup:
 1. Navigate to the backend folder (`cd backend`).
-2. Run `npm install`.
-3. Start the server using `npm start` or `npm run dev`.
+2. Run `npm install` to install dependencies.
+3. Start the server using:
+   ```bash
+   node server.js

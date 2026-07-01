@@ -27,6 +27,8 @@ React Sweets Cart App is a full-stack e-commerce web application for a sweet sho
 3. Run `npm run dev` to start the Vite development server (usually http://localhost:5173).
 
 ### Backend Setup:
-1. Navigate to the backend folder.
-2. Run `npm install`.
-3. Start the server using `npm start` or `npm run dev`.
+1. Navigate to the backend folder (`cd backend`).
+2. Run `npm install` to install dependencies.
+3. Start the server using:
+   ```bash
+   node server.js
