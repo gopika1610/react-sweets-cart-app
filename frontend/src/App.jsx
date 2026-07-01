@@ -84,7 +84,7 @@ function App() {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/products");
+        const response = await axios.get("https://sweet-cart-backend-app.onrender.com/api/products");
         setProducts(response.data); 
       } catch (err) {
         console.error("Error fetching database products:", err);
@@ -106,7 +106,7 @@ function App() {
     const initializeCartFromDB = async () => {
       if (!currentUserId) { setCart([]); return; }
       try {
-        const response = await axios.get(`http://localhost:5000/api/cart?userId=${currentUserId}`);
+        const response = await axios.get(`https://sweet-cart-backend-app.onrender.com/api/cart?userId=${currentUserId}`);
         setCart([...response.data]);
       } catch (err) { console.error(err); }
     };
@@ -116,7 +116,7 @@ function App() {
   const handleAddToCart = async (item, quantity = 1) => {
     if (!currentUserId) { alert("⚠️ Please login first!"); return; }
     try {
-      const response = await axios.post("http://localhost:5000/api/cart/add", {
+      const response = await axios.post("https://sweet-cart-backend-app.onrender.com/api/cart/add", {
         userId: currentUserId,
         productId: item._id || item.id,
         name: item.name,
