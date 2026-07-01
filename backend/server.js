@@ -108,9 +108,9 @@ import connectDB from './config/db.js';
 
 // Import routes module mapping files
 import productRoutes from './routes/productRoutes.js'; 
-import cartRoutes from './routes/cartRoutes.js';
+import cartRoutes from './routes/CartRoutes.js';
 import userRoutes from './routes/userRoutes.js'; 
-import orderRoutes from './routes/orderRoutes.js';
+import orderRoutes from './routes/OrderRoutes.js';
 
 dotenv.config();
 connectDB();
