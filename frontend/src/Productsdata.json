@@ -1,0 +1,316 @@
+[
+  {
+    "id": 1,
+    "name": "Kaju Katli",
+    "price": 295,
+    "img": "/kajukatli.webp",
+    "description": "Delicate diamond-shaped cashew sweet.\nRich, creamy, and melts in the mouth.\nPerfect for festivals and gifting.\nLoved by all ages."
+  },
+  {
+    "id": 2,
+    "name": "Masala Cashew",
+    "price": 156,
+    "img": "/masala-cashew.webp",
+    "description": "Crunchy roasted cashews with spices.\nA savory and slightly sweet snack.\nIdeal for evening munching or gifting.\nAdds a punch of flavor to any moment."
+  },
+  {
+    "id": 3,
+    "name": "Kulabjamun",
+    "price": 408,
+    "img": "/kulabjamun.webp",
+    "description": "Soft, syrupy milk balls dessert.\nSweetness balanced with fragrant syrup.\nTraditional treat for all occasions.\nA delight for family and guests."
+  },
+  {
+    "id": 4,
+    "name": "Almond Sticks",
+    "price": 176,
+    "img": "/almond-sticks.webp",
+    "description": "Crispy almond sticks coated lightly.\nPerfect crunchy snack anytime.\nNutty flavor with subtle sweetness.\nGreat addition to your tea time."
+  },
+  {
+    "id": 5,
+    "name": "Spl. Mysore Pak",
+    "price": 190,
+    "img": "/mysorepak.jpeg",
+    "description": "Rich ghee-based traditional sweet.\nSoft texture that melts instantly.\nSweet and flavorful in every bite.\nPopular treat for festivals and celebrations."
+  },
+  {
+    "id": 6,
+    "name": "Divine Ladoo",
+    "price": 164,
+    "img": "/divine-laddu.jpg",
+    "description": "Round, soft and aromatic sweet.\nMade from premium ingredients.\nPerfect for gifting or celebrations.\nLoved by children and adults alike."
+  },
+  {
+    "id": 7,
+    "name": "Moti Pak",
+    "price": 160,
+    "img": "/viewall/moti-pak.webp",
+    "description": "Rich traditional sweet with ghee.\nSoft texture that melts in the mouth.\nSweet and fragrant every bite.\nA favorite for festive occasions."
+  },
+  {
+    "id": 8,
+    "name": "Rasakulla",
+    "price": 176,
+    "img": "/rasakulla.webp",
+    "description": "Soft, spongy milk-based sweet.\nSoaked in fragrant sugar syrup.\nPerfect dessert for celebrations.\nLight and enjoyable treat."
+  },
+  {
+    "id": 9,
+    "name": "Butter Murukku",
+    "price": 56,
+    "img": "/buttermuruku.jpg",
+    "description": "Crispy, buttery Indian snack.\nLightly spiced for flavor.\nPerfect for tea time munching.\nLoved by all snack lovers."
+  },
+  {
+    "id": 10,
+    "name": "Kaju King",
+    "price": 295,
+    "img": "/viewall/kaju-king.webp",
+    "description": "Premium cashew sweet treat.\nSoft, rich, and indulgent taste.\nIdeal for gifting and celebrations.\nA delight for sweet lovers."
+  },
+  {
+    "id": 11,
+    "name": "Pista Stick",
+    "price": 275,
+    "img": "/viewall/pista-stick.webp",
+    "description": "Crunchy pistachio sticks.\nLightly sweet and nutty flavor.\nPerfect for snacking or gifting.\nAdds elegance to any occasion."
+  },
+  {
+    "id": 12,
+    "name": "English Toffee",
+    "price": 225,
+    "img": "/viewall/english-toffee.webp",
+    "description": "Smooth, buttery toffee candy.\nRich, sweet flavor in every bite.\nPerfect treat for kids and adults.\nGreat for gifting or personal indulgence."
+  },
+  {
+    "id": 13,
+    "name": "Cofee Cookies",
+    "price": 160,
+    "img": "/viewall/Cofee-Cookies.webp",
+    "description": "Crispy coffee-flavored cookies.\nLightly sweet and aromatic.\nPerfect with your morning beverage.\nA treat for coffee lovers."
+  },
+  {
+    "id": 14,
+    "name": "Cookies Gift Box",
+    "price": 500,
+    "img": "/viewall/Cookies Box.jpeg",
+    "description": "Assorted cookies in an elegant box.\nPerfect for gifting on occasions.\nVariety of flavors for everyone.\nBeautifully presented and tasty."
+  },
+  {
+    "id": 15,
+    "name": "Corn Flakes Mixture",
+    "price": 265,
+    "img": "/viewall/carn flakes mixture.jpeg",
+    "description": "Crunchy corn flakes snack mix.\nLightly spiced for extra taste.\nPerfect for tea time or munching.\nA healthy yet tasty treat."
+  },
+  {
+    "id": 16,
+    "name": "Garlic Toast",
+    "price": 150,
+    "img": "/viewall/garlic toast.jpeg",
+    "description": "Crispy garlic-flavored bread.\nPerfect for evening snacks.\nLightly spiced with rich aroma.\nLoved by everyone at gatherings."
+  },
+  {
+    "id": 17,
+    "name": "Ghatia Papdi",
+    "price": 190,
+    "img": "/viewall/ghatiya papdi.jpeg",
+    "description": "Crunchy traditional savory snack.\nMildly spiced with a rich taste.\nPerfect for festive munching.\nLoved by all ages."
+  },
+  {
+    "id": 18,
+    "name": "White Burfi",
+    "price": 295,
+    "img": "/viewall/white burfi.jpeg",
+    "description": "Soft and creamy milk sweet.\nDelicately flavored and rich.\nPerfect for gifting or dessert.\nA classic traditional treat."
+  },
+  {
+    "id": 19,
+    "name": "Jeera Khari",
+    "price": 300,
+    "img": "/viewall/jeera-khari.webp",
+    "description": "Crispy puff pastry with cumin.\nPerfect with tea or snacks.\nLight, flaky, and aromatic.\nA savory delight for all."
+  },
+  {
+    "id": 20,
+    "name": "Kaju Pakoda",
+    "price": 95,
+    "img": "/viewall/kaju pakoda.jpeg",
+    "description": "Crispy cashew-coated fried snack.\nPerfect for evening munching.\nRich, crunchy, and flavorful.\nLoved by snack enthusiasts."
+  },
+  {
+    "id": 21,
+    "name": "Mohanthal",
+    "price": 295,
+    "img": "/viewall/mohanthal.jpeg",
+    "description": "Traditional ghee and gram flour sweet.\nRich, soft, and aromatic.\nPerfect for festive gifting.\nLoved across generations."
+  },
+  {
+    "id": 22,
+    "name": "Namkeen Paara",
+    "price": 230,
+    "img": "/viewall/namkeen-paara.webp",
+    "description": "Crispy, spiced savory squares.\nPerfect for tea-time snacks.\nLightly flavored with traditional spices.\nA favorite among all snack lovers."
+  },
+  {
+    "id": 23,
+    "name": "Peri Peri Straws",
+    "price": 150,
+    "img": "/viewall/peri-peri-straws.webp",
+    "description": "Spicy peri-peri flavored crunchy straws.\nIdeal for snacks or parties.\nRich and bold taste in every bite.\nLoved by spicy food lovers."
+  },
+  {
+    "id": 24,
+    "name": "Twix Tart",
+    "price": 295,
+    "img": "/viewall/twix tart.webp",
+    "description": "Sweet and crispy caramel tart.\nRich chocolate topping for delight.\nPerfect dessert for celebrations.\nLoved by all chocolate lovers."
+  },
+  {
+    "id": 33,
+    "name": "Rasmalai",
+    "price": 150,
+    "img": "/viewall/rasamalai 1.webp",
+    "description": "Soft cottage cheese patties soaked in saffron-infused milk, garnished with aromatic cardamom and nuts for a royal experience."
+  },
+  {
+    "id": 34,
+    "name": "Chashni_Petha",
+    "price": 150,
+    "img": "/viewall/Chashni_Petha.webp",
+    "description": "Delight in our Chashni Petha, a juicy traditional Indian sweet cooked in a saffron-infused sugar syrup that perfectly satisfies your cravings"
+  },
+  {
+    "id": 35,
+    "name": "Rose Milk Burfi",
+    "price": 150,
+    "img": "/viewall/rose-milk-burfi.webp",
+    "description": "Embark on a floral journey with our Rose Milk Burfi, a traditional Indian delicacy made with milk solids, sugar, and aromatic rose essence to elevate your special moments."
+  },
+  {
+    "id": 36,
+    "name": "kaju-paan",
+    "price": 150,
+    "img": "/viewall/kaju-paan.webp",
+    "description": "Savor the refreshing flavor of our Kaju Paan, a premium cashew-based sweet shaped like a betel leaf and filled with a smooth, creamy cashew nut paste."
+  },
+  {
+    "id": 37,
+    "name": "kaju-apple",
+    "price": 150,
+    "img": "/viewall/kaju-apple.webp",
+    "description": "Indulge in our Kaju Apple, a delightful apple-shaped sweet made with premium cashews that brings pure joy to any special occasion or festive celebration."
+  },
+  {
+    "id": 38,
+    "name": "kaju-boat",
+    "price": 150,
+    "img": "/viewall/kaju-boat.webp",
+    "description": "Sail into a world of flavors with our Kaju Boat, a delightful boat-shaped cashew sweet filled with almonds, pistachios, and figs—perfect for any festive celebration."
+  },
+  {
+    "id": 39,
+    "name": "kaju-orange-roll",
+    "price": 150,
+    "img": "/viewall/kaju-orange-roll.webp",
+    "description": "Indulge in the citrusy and sweet flavors of our Kaju Orange Roll. Premium cashew-based sweets flavored with orange and rolled to perfection. Our Kaju Orange Roll is sure to bring joy to any celebration."
+  },
+  {
+    "id": 40,
+    "name": "blueberry-kaju-katli",
+    "price": 150,
+    "img": "/viewall/blueberry-kaju-katli.webp",
+    "description": "Treat yourself to our Blueberry Kaju Katli, a perfect blend of rich premium cashews and sweet, tangy blueberry flavor that satisfies your cravings."
+  },
+  {
+    "id": 41,
+    "name": "kaju-roll",
+    "price": 150,
+    "img": "/viewall/kaju-roll.webp",
+    "description": "Indulge in our Kaju Roll, a premium cashew sweet rolled in silver varq with a melt-in-your-mouth texture, stuffed with rich kesar and assorted nuts."
+  },
+  {
+    "id": 42,
+    "name": "mango-vanilla-cream-cake",
+    "price": 150,
+    "img": "/viewall/mango-vanilla-cream-cake.webp",
+    "description": "This item is currently unavailable for online ordering via our website due to shipping restrictions. If you reside in Chennai, you may purchase it from our stores, or alternatively, place an order through Swiggy or Zomato."
+  },
+  {
+    "id": 43,
+    "name": "boondhi-ladoo",
+    "price": 150,
+    "img": "/viewall/boondhi-ladoo.webp",
+    "description": "Indulge in the timeless sweetness of Boondhi Ladoo, a bestselling treat made from chickpea flour, sugar syrup, and cashews, offering a soft, fudgy texture that delights the senses."
+  },
+  {
+    "id": 44,
+    "name": "badhusha",
+    "price": 150,
+    "img": "/viewall/badhusha.webp",
+    "description":"Treat yourself to the melt-in-your-mouth goodness of Badhusha, a classic Indian sweet offering a perfect balance of sweetness and flakiness, made with flour, ghee, and sugar syrup."},
+  {
+    "id": 45,
+    "name": "coconut-burfi",
+    "price": 150,
+    "img": "/viewall/coconut-burfi.webp",
+    "description": "Savour the authentic taste of Coconut Burfi, a classic South Indian sweet made with desiccated coconut, khova, and ghee that melts in your mouth with every bite."},
+  {
+    "id": 46,
+    "name": "methi-ladoo",
+    "price": 150,
+    "img": "/viewall/methi-ladoo.webp",
+    "description": "Savor the unique flavors of our Methi Ladoo, a sweet and savoury treat made from roasted fenugreek seeds, wholesome gond, wheat flour, coconut, almonds, cashews, and pure desi ghee."
+  },
+  {
+    "id": 47,
+    "name": "Assorted Premium Sweets Box",
+    "price": 150,
+    "img": "/viewall/assorted sweet1.jpeg",
+    "description": "A grand celebration platter featuring a rich assortment of traditional Indian delicacies, from soft jamuns and rich pedas to premium diamond burfis, perfect for gifting and sharing."
+  },
+  {
+    "id": 48,
+    "name": "Valentine Heart Candy Box",
+    "price": 150,
+    "img": "/viewall/assorted sweet2.jpg",
+    "description": "Share the love with this delightful heart-shaped box filled with soft, sugar-dusted berry candies that perfectly blend sweet romance with chewy fruitiness."
+  },
+  {
+    "id": 49,
+    "name": "Premium Chocolate Truffle Box",
+    "price": 150,
+    "img": "/viewall/assorted sweet4.jpg",
+    "description": "An elegant collection of handcrafted chocolate truffles, featuring a variety of rich centers and premium coatings like shredded coconut, cocoa dust, and crunchy nuts."
+  },
+  {
+    "id": 50,
+    "name": "Royal Assorted Sweets and Dry Fruits Box",
+    "price": 150,
+    "img": "/viewall/assorted sweet5.jpg",
+    "description": "An exquisite royal-themed gift box curated with a premium selection of traditional rich burfis, stuffed dates, and assorted fine nuts, making it the perfect festive offering."
+  },
+  {
+    "id": 51,
+    "name": "Luxury Pastel Confectionery Gift Box",
+    "price": 150,
+    "img": "/viewall/assorted sweet6.jpg",
+    "description": "An elegant luxury gift box featuring a curated selection of gourmet truffles, praline eggs, and artisanal chocolates in stunning pastel and metallic hues, beautifully wrapped for premium celebrations."
+  },
+  {
+    "id": 52,
+    "name": "Pastel Vibrant Macarons Gift Box",
+    "price": 150,
+    "img": "/viewall/Assorted sweet7.jpg",
+    "description": "A delightful pastel-themed gift box filled with an assortment of colorful, authentic French macarons with rich gourmet fillings, beautifully wrapped with a satin pink bow."
+  },
+  {
+    "id": 53,
+    "name": "Bhakarwadi",
+    "price": 120,
+    "img": "/viewall/bhakarwadi.webp",
+    "description": "Savor the authentic taste of our traditional Bhakarwadi—a crispy, deep-fried bite-sized roll packed with a perfect blend of spicy, tangy, and sweet maharashtrian spice mix and crunchy poppy seeds. The ultimate savory snack to pair with your evening tea!"
+  }
+  
+]

@@ -1,0 +1,146 @@
+
+.checkout-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.checkout-title {
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #212529;
+}
+
+
+.checkout-main {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;  
+}
+
+
+.checkout-form {
+  flex: 7;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.checkout-summary {
+  flex: 5; 
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  padding: 24px;
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+.checkout-form h4, 
+.checkout-summary h4 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #212529;
+}
+
+
+.form-group-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.input-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888888;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout-form input:focus {
+  border-color: #ff7f00; 
+  box-shadow: 0 0 0 2px rgba(255, 127, 0, 0.1);
+}
+
+
+.inline-fields-row {
+  display: flex;
+  gap: 16px;
+}
+
+.flex-field {
+  flex: 1;
+}
+
+
+.summary-item,
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #495057;
+}
+
+.summary-row.total {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-top: 16px;
+}
+
+/* Brand Total Highlight */
+.orange-total {
+  color: #ff7f00;
+}
+
+.text-success {
+  color: #198754;
+}
+
+/* Production-style action commitment button on order summary box */
+.place-order-btn-final {
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.place-order-btn-final:hover {
+  background-color: #212529;
+  opacity: 0.95;
+}
+
+/* Clean fallback adjustments for smaller mobile layouts */
+@media (max-width: 768px) {
+  .checkout-main {
+    flex-direction: column;
+  }
+  
+  .inline-fields-row {
+    flex-direction: column;
+    gap: 0;
+  }
+}
