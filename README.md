@@ -1,4 +1,4 @@
-# 🍬 React Sweets Cart App
+#  React Sweets Cart App
 
 React Sweets Cart App is a full-stack e-commerce web application for a sweet shop. It allows users to browse sweet products, secure authentication, add items to a cart, adjust quantities, and see the total price in real-time. The UI is fully responsive using Bootstrap, making it easy to use on both desktop and mobile devices.
 
